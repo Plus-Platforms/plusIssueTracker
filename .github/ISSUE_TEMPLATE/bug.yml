@@ -1,0 +1,72 @@
+name: "🐛 버그 신고"
+description: 플랫폼 내에서 발생한 버그를 신고하세요.
+title: "🐛 [버그] - <title>"
+labels: [
+  "bug"
+]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "버그 설명"
+      description: 버그를 최대한 상세하게 알려주세요.
+      placeholder: 짧고 간단 명료하게 작성하세요
+    validations:
+      required: true
+  - type: textarea
+    id: reprod
+    attributes:
+      label: "재현 과정"
+      description: 버그를 재현하기 위한 방법을 알려주세요.
+      value: |
+        1. '상점' 버튼을 누른다.
+        2. 상점 내에서 '행운의 아이템박스'를 선택한다.
+        3. 구매 버튼을 69번 누르면 "Error on line 74"가 나타난다.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "스크린샷"
+      description: 설명을 자세히 하기 위해서 스크린샷을 올려주세요.
+      value: |
+        ![DESCRIPTION](LINK.png)
+      render: bash
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: "오류 로그"
+      description: mapi.pcor.me에서 발생한 버그의 경우 PHP 오류가 출력돼요. 오류를 붙여넣어 주세요.
+      render: bash
+    validations:
+      required: false
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "플랫폼"
+      description: 사용 중인 클라이언트를 선택해 주세요.
+      multiple: true
+      options:
+        - 웹사이트 (Chromium 계열)
+        - 웹사이트 (Safari 계열)
+        - 웹사이트 (기타)
+        - PlusCoin 디스코드 봇
+        - Plus 디스코드 봇
+        - 기타
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "유해성"
+      description: 이 버그가 얼마만큼 영향을 끼치나요?
+      multiple: true
+      options:
+        - 모든 사용자에게 타격을 줄 수 있음
+        - 일부 사용자에게 타격을 줄 수 있음
+        - 잘못된 표시
+    validations:
+      required: false

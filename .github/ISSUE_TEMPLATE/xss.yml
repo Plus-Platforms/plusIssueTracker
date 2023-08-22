@@ -1,0 +1,70 @@
+name: "⚠️ 취약점"
+description: 플랫폼 내에서 발생한 취약점을 신고하세요.
+title: "⚠️ [취약점] - <title>"
+labels: [
+  "bug"
+]
+body:
+  - type: input
+    id: sekai
+    attributes:
+      label: "Sekai 번호"
+      description: 취약점 신고 보상을 받기 위해서 번호를 입력해주세요. (선택)
+      placeholder: 영문, 숫자 혼합 11자
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: "취약점 설명"
+      description: 취약점을 최대한 상세하게 알려주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: reprod
+    attributes:
+      label: "재현 과정"
+      description: 취약점을 재현하기 위한 방법을 알려주세요.
+      value: |
+        1. 사용자명을 <script>alert('hello');</script>로 설정한다.
+        2. hello 팝업창을 확인한다.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "스크린샷"
+      description: 설명을 자세히 하기 위해서 스크린샷을 올려주세요.
+      value: |
+        ![DESCRIPTION](LINK.png)
+      render: bash
+    validations:
+      required: false
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "플랫폼"
+      description: 사용 중인 클라이언트를 선택해 주세요.
+      multiple: true
+      options:
+        - 웹사이트 (Chromium 계열)
+        - 웹사이트 (Safari 계열)
+        - 웹사이트 (기타)
+        - PlusCoin 디스코드 봇
+        - Plus 디스코드 봇
+        - 기타
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "유해성"
+      description: 이 버그가 얼마만큼 영향을 끼치나요?
+      multiple: true
+      options:
+        - 모든 사용자에게 타격을 줄 수 있음
+        - 일부 사용자에게 타격을 줄 수 있음
+        - 잘못된 표시
+    validations:
+      required: false
