@@ -1,6 +1,4 @@
 <a name="readme-top"></a>
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
